@@ -1,0 +1,898 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		66796FC42A35877A00A68DA0 /* RobloxURLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66796FC32A35877A00A68DA0 /* RobloxURLHandler.swift */; };
+		66906F1C2A3AF7BB001DAC7E /* RobloxKit.docc in Sources */ = {isa = PBXBuildFile; fileRef = 66906F1B2A3AF7BB001DAC7E /* RobloxKit.docc */; };
+		66906F222A3AF7BB001DAC7E /* RobloxKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66906F182A3AF7BB001DAC7E /* RobloxKit.framework */; };
+		66906F292A3AF7BB001DAC7E /* RobloxKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66906F282A3AF7BB001DAC7E /* RobloxKitTests.swift */; };
+		66906F2A2A3AF7BB001DAC7E /* RobloxKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 66906F1A2A3AF7BB001DAC7E /* RobloxKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66906F2D2A3AF7BB001DAC7E /* RobloxKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66906F182A3AF7BB001DAC7E /* RobloxKit.framework */; };
+		66906F2E2A3AF7BB001DAC7E /* RobloxKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66906F182A3AF7BB001DAC7E /* RobloxKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6697D8402A0BB4FD00399F0C /* RoStrapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6697D83F2A0BB4FD00399F0C /* RoStrapApp.swift */; };
+		6697D8422A0BB4FD00399F0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6697D8412A0BB4FD00399F0C /* ContentView.swift */; };
+		6697D8442A0BB4FD00399F0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6697D8432A0BB4FD00399F0C /* Assets.xcassets */; };
+		6697D8472A0BB4FD00399F0C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6697D8462A0BB4FD00399F0C /* Preview Assets.xcassets */; };
+		6697D8522A0BB4FD00399F0C /* RoStrapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6697D8512A0BB4FD00399F0C /* RoStrapTests.swift */; };
+		6697D85C2A0BB4FE00399F0C /* RoStrapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6697D85B2A0BB4FE00399F0C /* RoStrapUITests.swift */; };
+		6697D85E2A0BB4FE00399F0C /* RoStrapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6697D85D2A0BB4FE00399F0C /* RoStrapUITestsLaunchTests.swift */; };
+		6697D86C2A0C271600399F0C /* RobloxUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6697D86B2A0C271600399F0C /* RobloxUpdater.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		66906F232A3AF7BB001DAC7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6697D8342A0BB4FD00399F0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66906F172A3AF7BB001DAC7E;
+			remoteInfo = RobloxKit;
+		};
+		66906F252A3AF7BB001DAC7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6697D8342A0BB4FD00399F0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6697D83B2A0BB4FD00399F0C;
+			remoteInfo = RoStrap;
+		};
+		66906F2B2A3AF7BB001DAC7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6697D8342A0BB4FD00399F0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66906F172A3AF7BB001DAC7E;
+			remoteInfo = RobloxKit;
+		};
+		6697D84E2A0BB4FD00399F0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6697D8342A0BB4FD00399F0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6697D83B2A0BB4FD00399F0C;
+			remoteInfo = RoStrap;
+		};
+		6697D8582A0BB4FE00399F0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6697D8342A0BB4FD00399F0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6697D83B2A0BB4FD00399F0C;
+			remoteInfo = RoStrap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		66906F322A3AF7BB001DAC7E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				66906F2E2A3AF7BB001DAC7E /* RobloxKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		66796FC32A35877A00A68DA0 /* RobloxURLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobloxURLHandler.swift; sourceTree = "<group>"; };
+		66906F122A3AF77F001DAC7E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		66906F182A3AF7BB001DAC7E /* RobloxKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RobloxKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66906F1A2A3AF7BB001DAC7E /* RobloxKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RobloxKit.h; sourceTree = "<group>"; };
+		66906F1B2A3AF7BB001DAC7E /* RobloxKit.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = RobloxKit.docc; sourceTree = "<group>"; };
+		66906F212A3AF7BB001DAC7E /* RobloxKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RobloxKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		66906F282A3AF7BB001DAC7E /* RobloxKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobloxKitTests.swift; sourceTree = "<group>"; };
+		6697D83C2A0BB4FD00399F0C /* RoStrap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoStrap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6697D83F2A0BB4FD00399F0C /* RoStrapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoStrapApp.swift; sourceTree = "<group>"; };
+		6697D8412A0BB4FD00399F0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6697D8432A0BB4FD00399F0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6697D8462A0BB4FD00399F0C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6697D8482A0BB4FD00399F0C /* RoStrap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RoStrap.entitlements; sourceTree = "<group>"; };
+		6697D84D2A0BB4FD00399F0C /* RoStrapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoStrapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6697D8512A0BB4FD00399F0C /* RoStrapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoStrapTests.swift; sourceTree = "<group>"; };
+		6697D8572A0BB4FD00399F0C /* RoStrapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoStrapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6697D85B2A0BB4FE00399F0C /* RoStrapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoStrapUITests.swift; sourceTree = "<group>"; };
+		6697D85D2A0BB4FE00399F0C /* RoStrapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoStrapUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6697D86A2A0BD08600399F0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6697D86B2A0C271600399F0C /* RobloxUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobloxUpdater.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		66906F152A3AF7BB001DAC7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66906F1E2A3AF7BB001DAC7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66906F222A3AF7BB001DAC7E /* RobloxKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6697D8392A0BB4FD00399F0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66906F2D2A3AF7BB001DAC7E /* RobloxKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6697D84A2A0BB4FD00399F0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6697D8542A0BB4FD00399F0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		66906F192A3AF7BB001DAC7E /* RobloxKit */ = {
+			isa = PBXGroup;
+			children = (
+				66906F1A2A3AF7BB001DAC7E /* RobloxKit.h */,
+				66906F1B2A3AF7BB001DAC7E /* RobloxKit.docc */,
+			);
+			path = RobloxKit;
+			sourceTree = "<group>";
+		};
+		66906F272A3AF7BB001DAC7E /* RobloxKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				66906F282A3AF7BB001DAC7E /* RobloxKitTests.swift */,
+			);
+			path = RobloxKitTests;
+			sourceTree = "<group>";
+		};
+		6697D8332A0BB4FD00399F0C = {
+			isa = PBXGroup;
+			children = (
+				66906F122A3AF77F001DAC7E /* README.md */,
+				6697D83E2A0BB4FD00399F0C /* RoStrap */,
+				6697D8502A0BB4FD00399F0C /* RoStrapTests */,
+				6697D85A2A0BB4FE00399F0C /* RoStrapUITests */,
+				66906F192A3AF7BB001DAC7E /* RobloxKit */,
+				66906F272A3AF7BB001DAC7E /* RobloxKitTests */,
+				6697D83D2A0BB4FD00399F0C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6697D83D2A0BB4FD00399F0C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6697D83C2A0BB4FD00399F0C /* RoStrap.app */,
+				6697D84D2A0BB4FD00399F0C /* RoStrapTests.xctest */,
+				6697D8572A0BB4FD00399F0C /* RoStrapUITests.xctest */,
+				66906F182A3AF7BB001DAC7E /* RobloxKit.framework */,
+				66906F212A3AF7BB001DAC7E /* RobloxKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6697D83E2A0BB4FD00399F0C /* RoStrap */ = {
+			isa = PBXGroup;
+			children = (
+				6697D86A2A0BD08600399F0C /* Info.plist */,
+				6697D83F2A0BB4FD00399F0C /* RoStrapApp.swift */,
+				6697D8412A0BB4FD00399F0C /* ContentView.swift */,
+				6697D8432A0BB4FD00399F0C /* Assets.xcassets */,
+				6697D8482A0BB4FD00399F0C /* RoStrap.entitlements */,
+				6697D86B2A0C271600399F0C /* RobloxUpdater.swift */,
+				6697D8452A0BB4FD00399F0C /* Preview Content */,
+				66796FC32A35877A00A68DA0 /* RobloxURLHandler.swift */,
+			);
+			path = RoStrap;
+			sourceTree = "<group>";
+		};
+		6697D8452A0BB4FD00399F0C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				6697D8462A0BB4FD00399F0C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6697D8502A0BB4FD00399F0C /* RoStrapTests */ = {
+			isa = PBXGroup;
+			children = (
+				6697D8512A0BB4FD00399F0C /* RoStrapTests.swift */,
+			);
+			path = RoStrapTests;
+			sourceTree = "<group>";
+		};
+		6697D85A2A0BB4FE00399F0C /* RoStrapUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6697D85B2A0BB4FE00399F0C /* RoStrapUITests.swift */,
+				6697D85D2A0BB4FE00399F0C /* RoStrapUITestsLaunchTests.swift */,
+			);
+			path = RoStrapUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		66906F132A3AF7BB001DAC7E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66906F2A2A3AF7BB001DAC7E /* RobloxKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		66906F172A3AF7BB001DAC7E /* RobloxKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66906F2F2A3AF7BB001DAC7E /* Build configuration list for PBXNativeTarget "RobloxKit" */;
+			buildPhases = (
+				66906F132A3AF7BB001DAC7E /* Headers */,
+				66906F142A3AF7BB001DAC7E /* Sources */,
+				66906F152A3AF7BB001DAC7E /* Frameworks */,
+				66906F162A3AF7BB001DAC7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RobloxKit;
+			productName = RobloxKit;
+			productReference = 66906F182A3AF7BB001DAC7E /* RobloxKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		66906F202A3AF7BB001DAC7E /* RobloxKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66906F332A3AF7BB001DAC7E /* Build configuration list for PBXNativeTarget "RobloxKitTests" */;
+			buildPhases = (
+				66906F1D2A3AF7BB001DAC7E /* Sources */,
+				66906F1E2A3AF7BB001DAC7E /* Frameworks */,
+				66906F1F2A3AF7BB001DAC7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				66906F242A3AF7BB001DAC7E /* PBXTargetDependency */,
+				66906F262A3AF7BB001DAC7E /* PBXTargetDependency */,
+			);
+			name = RobloxKitTests;
+			productName = RobloxKitTests;
+			productReference = 66906F212A3AF7BB001DAC7E /* RobloxKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6697D83B2A0BB4FD00399F0C /* RoStrap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6697D8612A0BB4FE00399F0C /* Build configuration list for PBXNativeTarget "RoStrap" */;
+			buildPhases = (
+				6697D8382A0BB4FD00399F0C /* Sources */,
+				6697D8392A0BB4FD00399F0C /* Frameworks */,
+				6697D83A2A0BB4FD00399F0C /* Resources */,
+				66906F322A3AF7BB001DAC7E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				66906F2C2A3AF7BB001DAC7E /* PBXTargetDependency */,
+			);
+			name = RoStrap;
+			packageProductDependencies = (
+			);
+			productName = RoStrap;
+			productReference = 6697D83C2A0BB4FD00399F0C /* RoStrap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6697D84C2A0BB4FD00399F0C /* RoStrapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6697D8642A0BB4FE00399F0C /* Build configuration list for PBXNativeTarget "RoStrapTests" */;
+			buildPhases = (
+				6697D8492A0BB4FD00399F0C /* Sources */,
+				6697D84A2A0BB4FD00399F0C /* Frameworks */,
+				6697D84B2A0BB4FD00399F0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6697D84F2A0BB4FD00399F0C /* PBXTargetDependency */,
+			);
+			name = RoStrapTests;
+			productName = RoStrapTests;
+			productReference = 6697D84D2A0BB4FD00399F0C /* RoStrapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6697D8562A0BB4FD00399F0C /* RoStrapUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6697D8672A0BB4FE00399F0C /* Build configuration list for PBXNativeTarget "RoStrapUITests" */;
+			buildPhases = (
+				6697D8532A0BB4FD00399F0C /* Sources */,
+				6697D8542A0BB4FD00399F0C /* Frameworks */,
+				6697D8552A0BB4FD00399F0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6697D8592A0BB4FE00399F0C /* PBXTargetDependency */,
+			);
+			name = RoStrapUITests;
+			productName = RoStrapUITests;
+			productReference = 6697D8572A0BB4FD00399F0C /* RoStrapUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6697D8342A0BB4FD00399F0C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					66906F172A3AF7BB001DAC7E = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					66906F202A3AF7BB001DAC7E = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 6697D83B2A0BB4FD00399F0C;
+					};
+					6697D83B2A0BB4FD00399F0C = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					6697D84C2A0BB4FD00399F0C = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 6697D83B2A0BB4FD00399F0C;
+					};
+					6697D8562A0BB4FD00399F0C = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 6697D83B2A0BB4FD00399F0C;
+					};
+				};
+			};
+			buildConfigurationList = 6697D8372A0BB4FD00399F0C /* Build configuration list for PBXProject "RoStrap" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6697D8332A0BB4FD00399F0C;
+			packageReferences = (
+			);
+			productRefGroup = 6697D83D2A0BB4FD00399F0C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6697D83B2A0BB4FD00399F0C /* RoStrap */,
+				6697D84C2A0BB4FD00399F0C /* RoStrapTests */,
+				6697D8562A0BB4FD00399F0C /* RoStrapUITests */,
+				66906F172A3AF7BB001DAC7E /* RobloxKit */,
+				66906F202A3AF7BB001DAC7E /* RobloxKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		66906F162A3AF7BB001DAC7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66906F1F2A3AF7BB001DAC7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6697D83A2A0BB4FD00399F0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6697D8472A0BB4FD00399F0C /* Preview Assets.xcassets in Resources */,
+				6697D8442A0BB4FD00399F0C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6697D84B2A0BB4FD00399F0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6697D8552A0BB4FD00399F0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		66906F142A3AF7BB001DAC7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66906F1C2A3AF7BB001DAC7E /* RobloxKit.docc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66906F1D2A3AF7BB001DAC7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66906F292A3AF7BB001DAC7E /* RobloxKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6697D8382A0BB4FD00399F0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66796FC42A35877A00A68DA0 /* RobloxURLHandler.swift in Sources */,
+				6697D86C2A0C271600399F0C /* RobloxUpdater.swift in Sources */,
+				6697D8422A0BB4FD00399F0C /* ContentView.swift in Sources */,
+				6697D8402A0BB4FD00399F0C /* RoStrapApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6697D8492A0BB4FD00399F0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6697D8522A0BB4FD00399F0C /* RoStrapTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6697D8532A0BB4FD00399F0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6697D85E2A0BB4FE00399F0C /* RoStrapUITestsLaunchTests.swift in Sources */,
+				6697D85C2A0BB4FE00399F0C /* RoStrapUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		66906F242A3AF7BB001DAC7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 66906F172A3AF7BB001DAC7E /* RobloxKit */;
+			targetProxy = 66906F232A3AF7BB001DAC7E /* PBXContainerItemProxy */;
+		};
+		66906F262A3AF7BB001DAC7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6697D83B2A0BB4FD00399F0C /* RoStrap */;
+			targetProxy = 66906F252A3AF7BB001DAC7E /* PBXContainerItemProxy */;
+		};
+		66906F2C2A3AF7BB001DAC7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 66906F172A3AF7BB001DAC7E /* RobloxKit */;
+			targetProxy = 66906F2B2A3AF7BB001DAC7E /* PBXContainerItemProxy */;
+		};
+		6697D84F2A0BB4FD00399F0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6697D83B2A0BB4FD00399F0C /* RoStrap */;
+			targetProxy = 6697D84E2A0BB4FD00399F0C /* PBXContainerItemProxy */;
+		};
+		6697D8592A0BB4FE00399F0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6697D83B2A0BB4FD00399F0C /* RoStrap */;
+			targetProxy = 6697D8582A0BB4FE00399F0C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		66906F302A3AF7BB001DAC7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.iivusly.RobloxKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		66906F312A3AF7BB001DAC7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.iivusly.RobloxKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		66906F342A3AF7BB001DAC7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.iivusly.RobloxKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RoStrap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RoStrap";
+			};
+			name = Debug;
+		};
+		66906F352A3AF7BB001DAC7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.iivusly.RobloxKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RoStrap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RoStrap";
+			};
+			name = Release;
+		};
+		6697D85F2A0BB4FE00399F0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6697D8602A0BB4FE00399F0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		6697D8622A0BB4FE00399F0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RoStrap/RoStrap.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RoStrap/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RoStrap/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Roblox needs access to your microphone to chat with voice.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.iivusly.rostrap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6697D8632A0BB4FE00399F0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RoStrap/RoStrap.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RoStrap/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RoStrap/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Roblox needs access to your microphone to chat with voice.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.iivusly.rostrap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		6697D8652A0BB4FE00399F0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.iivusly.RoStrapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RoStrap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RoStrap";
+			};
+			name = Debug;
+		};
+		6697D8662A0BB4FE00399F0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.iivusly.RoStrapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RoStrap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RoStrap";
+			};
+			name = Release;
+		};
+		6697D8682A0BB4FE00399F0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.iivusly.RoStrapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = RoStrap;
+			};
+			name = Debug;
+		};
+		6697D8692A0BB4FE00399F0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.iivusly.RoStrapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = RoStrap;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		66906F2F2A3AF7BB001DAC7E /* Build configuration list for PBXNativeTarget "RobloxKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66906F302A3AF7BB001DAC7E /* Debug */,
+				66906F312A3AF7BB001DAC7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66906F332A3AF7BB001DAC7E /* Build configuration list for PBXNativeTarget "RobloxKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66906F342A3AF7BB001DAC7E /* Debug */,
+				66906F352A3AF7BB001DAC7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6697D8372A0BB4FD00399F0C /* Build configuration list for PBXProject "RoStrap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6697D85F2A0BB4FE00399F0C /* Debug */,
+				6697D8602A0BB4FE00399F0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6697D8612A0BB4FE00399F0C /* Build configuration list for PBXNativeTarget "RoStrap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6697D8622A0BB4FE00399F0C /* Debug */,
+				6697D8632A0BB4FE00399F0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6697D8642A0BB4FE00399F0C /* Build configuration list for PBXNativeTarget "RoStrapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6697D8652A0BB4FE00399F0C /* Debug */,
+				6697D8662A0BB4FE00399F0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6697D8672A0BB4FE00399F0C /* Build configuration list for PBXNativeTarget "RoStrapUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6697D8682A0BB4FE00399F0C /* Debug */,
+				6697D8692A0BB4FE00399F0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6697D8342A0BB4FD00399F0C /* Project object */;
+}

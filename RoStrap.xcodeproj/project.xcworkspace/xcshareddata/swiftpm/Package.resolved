@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swift-request",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/carson-katri/swift-request.git",
+      "state" : {
+        "revision" : "6266d884d7ded618cceb0e0920431be4d6f4c4aa",
+        "version" : "1.4.0"
+      }
+    }
+  ],
+  "version" : 2
+}

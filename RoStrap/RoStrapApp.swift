@@ -48,7 +48,8 @@ struct RoStrapApp: App {
 				
 				stateMessage = "Downloading Roblox Version \(version.version)"
 				observations.append(downloadTask.progress.observe(\.fractionCompleted, options: [.new], changeHandler: { progress, changed in
-					stateValue = changed.newValue
+                    // TODO: Fix mutations from sendable closures for Swift 6
+                    stateValue = changed.newValue
 				}))
 			})
 			

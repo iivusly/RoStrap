@@ -94,14 +94,7 @@ struct RoStrapApp: App {
 					switch result {
 						case .success(()): break
 					case .failure(let error):
-						NSLog(error.localizedDescription)
-						throwingError = error.localizedDescription
-						isErroring = true
-					}
-				}
-				.alert("Startup Error", isPresented: $isErroring, presenting: $throwingError) {_ in
-					Button("Close") {
-						NSApplication.shared.terminate(nil)
+                        NSAlert(error: error).runModal()
 					}
 				}
 		}

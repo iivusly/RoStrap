@@ -166,25 +166,28 @@ class RobloxUpdater {
 	
 	private func unzipDirectory(path: URL, destination: URL) throws -> Int32 {
 		// TODO: Find a more efficient method of unzipping
-		let process = try Process.run(URL(filePath: "/usr/bin/unzip"), arguments: ["-qo", path.path(percentEncoded: false), "-d", destination.path(percentEncoded: false)])
+        let process = Process()
+        process.arguments = ["-qo", path.path, "-d", destination.path(percentEncoded: false)]
+        process.executableURL = URL(fileURLWithPath: "/usr/bin/unzip")
+        try process.run()
 		process.waitUntilExit()
 		return process.terminationStatus
 	}
 	
 	func processRobloxBinary(path: URL, version: clientVersionResponse) throws -> URL {
-		let applicationSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appending(component: Bundle.main.bundleIdentifier!)
+        let applicationSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appendingPathComponent(Bundle.main.bundleIdentifier!, conformingTo: .directory)
 		try FileManager.default.createDirectory(at: applicationSupport, withIntermediateDirectories: true)
 		
 		let _ = try unzipDirectory(path: path, destination: applicationSupport)
 		
-		let oldName = applicationSupport.appending(path: "RobloxPlayer.app")
-		let newName = applicationSupport.appending(path: "\(version.clientVersionUpload).app")
+        let oldName = applicationSupport.appendingPathComponent("RobloxPlayer.app", conformingTo: .directory)
+        let newName = applicationSupport.appendingPathComponent("\(version.clientVersionUpload).app", conformingTo: .directory)
 		
 		try FileManager.default.moveItem(at: oldName, to: newName)
 		
 		let app = Bundle(url: newName)!
 		
-		try FileManager.default.removeItem(at: (app.executableURL?.deletingLastPathComponent().appending(component: "Roblox.app"))!)
+        try FileManager.default.removeItem(at: (app.executableURL?.deletingLastPathComponent().appendingPathComponent("Roblox.app", conformingTo: .directory))!)
 		
 		NSWorkspace.shared.setIcon(Bundle.main.image(forResource: "AppIcon"), forFile: app.bundlePath, options: .excludeQuickDrawElementsIconCreationOption)
 		

@@ -35,7 +35,7 @@ struct RoStrapApp: App {
 	@State var observations: [NSKeyValueObservation] = []
 	
 	func checkForUpdate() async throws {
-		let updater = await RobloxUpdater()
+		let updater = try await RobloxUpdater()
 		let currentVersion = UserDefaults.standard.string(forKey: "RobloxVersion")
 		let channel = try await updater.getPlayerChannel()
 		let version = try await updater.getVersionData(channel: channel)

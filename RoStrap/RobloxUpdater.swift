@@ -21,6 +21,10 @@ class RobloxUpdater {
 		let channelName: String
 	}
 	
+	enum updateErrors: Error {
+		case cannotConnect, unzipFail
+	}
+	
 	// MARK: - Properties
 
 	static let setupServers: [URL] = [
@@ -42,7 +46,7 @@ class RobloxUpdater {
 	
 	var setupServer: URL!
 	
-	init() async {
+	init() async throws {
 		var server: URL?
 		
 		for url in RobloxUpdater.setupServers {
@@ -57,7 +61,7 @@ class RobloxUpdater {
 		}
 		
 		if server == nil {
-			fatalError("Roblox servers are down?")
+			throw updateErrors.cannotConnect
 		} else {
 			self.setupServer = server!
 		}
@@ -170,7 +174,9 @@ class RobloxUpdater {
         let applicationSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appendingPathComponent(Bundle.main.bundleIdentifier!, conformingTo: .directory)
 		try FileManager.default.createDirectory(at: applicationSupport, withIntermediateDirectories: true)
 		
-		let _ = try unzipDirectory(path: path, destination: applicationSupport)
+		if (try unzipDirectory(path: path, destination: applicationSupport) != 0) {
+			throw updateErrors.unzipFail
+		}
 		
         let oldName = applicationSupport.appendingPathComponent("RobloxPlayer.app", conformingTo: .directory)
         let newName = applicationSupport.appendingPathComponent("\(version.clientVersionUpload).app", conformingTo: .directory)

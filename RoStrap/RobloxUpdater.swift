@@ -146,8 +146,6 @@ class RobloxUpdater {
 	}
 	
 	func getRobloxBinary(channel: userChannelResponse, version: clientVersionResponse, completionHandler: @escaping (Result<URL, Error>) -> Void) -> URLSessionDownloadTask {
-		// FileManager.default.temporaryDirectory
-		
 		let url = URL(
 			string: "mac/\(version.clientVersionUpload)-RobloxPlayer.zip",
 			relativeTo: self.setupServer

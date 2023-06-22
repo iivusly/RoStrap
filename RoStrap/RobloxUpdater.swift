@@ -72,9 +72,6 @@ class RobloxUpdater {
 		let task = robloxUpdateURLSession.dataTask(with: urlRequest) { data, _, error in
 			if (data != nil) {
 				let stringContent = String(data: data!, encoding: .ascii)
-#if DEBUG
-				NSLog("\(url.absoluteString) : \(stringContent ?? "")")
-#endif
 				completionHandler(.success(stringContent ?? ""))
 			} else {
 				completionHandler(.failure(error!))
@@ -103,9 +100,6 @@ class RobloxUpdater {
 					URLCache.shared.storeCachedResponse(CachedURLResponse(response: response!, data: data), for: urlRequest)
 				}
 				
-#if DEBUG
-				NSLog("\(url.absoluteString) : \(fileURL!.absoluteString)")
-#endif
 				let renameURL = fileURL!.deletingPathExtension().appendingPathExtension(url.pathExtension)
 				_ = Task {
 					try FileManager.default.moveItem(at: fileURL!, to: renameURL)

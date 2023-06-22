@@ -87,6 +87,11 @@ struct RoStrapApp: App {
 						print(delegate.openArguments.joined(separator: " "))
 						let process = try Process.run(binaryPath, arguments: delegate.openArguments)
 						
+						if (process.isRunning) {
+							// TODO: we should wait until the roblox window is shown
+							// The old way of doing this is waiting for a semaphore called "/robloxPlayerStartedEvent",
+							// But it seems to not be triggered now...
+						}
 						
 						NSApplication.shared.terminate(nil)
 					}

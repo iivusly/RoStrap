@@ -71,6 +71,9 @@ struct RoStrapApp: App {
 					window.backgroundColor = .clear
 					window.level = .floating
 					window.center()
+					window.makeKey()
+					
+					NSApplication.shared.activate(ignoringOtherApps: true)
 					
 					let task = Task {
 						

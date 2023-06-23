@@ -8,34 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
-	@Binding var stateMessage: String
-	@Binding var stateValue: Double?
-	
+    @Binding var stateMessage: String
+    @Binding var stateValue: Double?
+
     var body: some View {
         VStack {
-			VStack {
-				Image(systemName: "gamecontroller")
-					.resizable()
-					.scaledToFit()
-					.rotationEffect(Angle.degrees(20))
-					.frame(maxWidth: 100, maxHeight: 100)
-				Text("Ro-Strap").font(.title)
-			}.frame(maxWidth: .infinity, maxHeight: .infinity)
-			HStack {
-				ProgressView(value: stateValue, label: {
-					Text(stateMessage)
-				}).frame(maxWidth: .infinity)
-				Spacer()
-			}
+            VStack {
+                Image(systemName: "gamecontroller")
+                    .resizable()
+                    .scaledToFit()
+                    .rotationEffect(Angle.degrees(20))
+                    .frame(maxWidth: 100, maxHeight: 100)
+                Text("Ro-Strap").font(.title)
+            }.frame(maxWidth: .infinity, maxHeight: .infinity)
+            HStack {
+                ProgressView(value: stateValue, label: {
+                    Text(stateMessage)
+                }).frame(maxWidth: .infinity)
+                Spacer()
+            }
         }
-		.padding()
-		.background(.ultraThinMaterial)
-		.frame(width: 500, height: 320, alignment: .center)
+        .padding()
+        .background(.ultraThinMaterial)
+        .frame(width: 500, height: 320, alignment: .center)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-		ContentView(stateMessage: .constant("Loading..."), stateValue: .constant(nil))
+        ContentView(stateMessage: .constant("Loading..."), stateValue: .constant(nil))
     }
 }

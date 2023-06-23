@@ -103,6 +103,7 @@ struct RoStrapApp: App {
                     case .success(()): break
                     case let .failure(error):
                         NSAlert(error: error).runModal()
+						NSApplication.shared.terminate(nil)
                     }
                 }
         }

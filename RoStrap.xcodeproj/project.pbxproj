@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		66796FC42A35877A00A68DA0 /* RobloxURLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66796FC32A35877A00A68DA0 /* RobloxURLHandler.swift */; };
 		6697D8402A0BB4FD00399F0C /* RoStrapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6697D83F2A0BB4FD00399F0C /* RoStrapApp.swift */; };
-		6697D8422A0BB4FD00399F0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6697D8412A0BB4FD00399F0C /* ContentView.swift */; };
+		6697D8422A0BB4FD00399F0C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6697D8412A0BB4FD00399F0C /* MainView.swift */; };
 		6697D8442A0BB4FD00399F0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6697D8432A0BB4FD00399F0C /* Assets.xcassets */; };
 		6697D8472A0BB4FD00399F0C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6697D8462A0BB4FD00399F0C /* Preview Assets.xcassets */; };
 		6697D8522A0BB4FD00399F0C /* RoStrapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6697D8512A0BB4FD00399F0C /* RoStrapTests.swift */; };
@@ -53,7 +53,7 @@
 		66906F122A3AF77F001DAC7E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6697D83C2A0BB4FD00399F0C /* RoStrap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoStrap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6697D83F2A0BB4FD00399F0C /* RoStrapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoStrapApp.swift; sourceTree = "<group>"; };
-		6697D8412A0BB4FD00399F0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6697D8412A0BB4FD00399F0C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6697D8432A0BB4FD00399F0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6697D8462A0BB4FD00399F0C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6697D8482A0BB4FD00399F0C /* RoStrap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RoStrap.entitlements; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 			children = (
 				6697D86A2A0BD08600399F0C /* Info.plist */,
 				6697D83F2A0BB4FD00399F0C /* RoStrapApp.swift */,
-				6697D8412A0BB4FD00399F0C /* ContentView.swift */,
+				6697D8412A0BB4FD00399F0C /* MainView.swift */,
 				6697D8432A0BB4FD00399F0C /* Assets.xcassets */,
 				6697D8482A0BB4FD00399F0C /* RoStrap.entitlements */,
 				6697D86B2A0C271600399F0C /* RobloxUpdater.swift */,
@@ -289,7 +289,7 @@
 			files = (
 				66796FC42A35877A00A68DA0 /* RobloxURLHandler.swift in Sources */,
 				6697D86C2A0C271600399F0C /* RobloxUpdater.swift in Sources */,
-				6697D8422A0BB4FD00399F0C /* ContentView.swift in Sources */,
+				6697D8422A0BB4FD00399F0C /* MainView.swift in Sources */,
 				6697D8402A0BB4FD00399F0C /* RoStrapApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -62,7 +62,7 @@ struct RoStrapApp: App {
 
     var body: some Scene {
         Window("Bootstrapper", id: "RobloxBootstrapper") {
-            ContentView(stateMessage: $stateMessage, stateValue: $stateValue)
+            MainView(stateMessage: $stateMessage, stateValue: $stateValue)
                 .frame(alignment: .center)
                 .task {
                     let window: NSWindow = NSApplication.shared.windows.first!

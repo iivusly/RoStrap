@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  RoStrap
 //
 //  Created by iivusly on 5/10/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     @Binding var stateMessage: String
     @Binding var stateValue: Double?
 
@@ -36,6 +36,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(stateMessage: .constant("Loading..."), stateValue: .constant(nil))
+        MainView(stateMessage: .constant("Loading..."), stateValue: .constant(nil))
     }
 }

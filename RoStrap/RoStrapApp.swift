@@ -87,7 +87,13 @@ struct RoStrapApp: App {
                         stateMessage = "Starting Roblox..."
 
                         print(delegate.openArguments.joined(separator: " "))
-                        let process = try Process.run(binaryPath, arguments: delegate.openArguments)
+                        let process = Process()
+						let output = Pipe()
+						
+						process.executableURL = binaryPath
+						process.arguments = delegate.openArguments
+						
+						try process.run()
 
                         if process.isRunning {
                             // TODO: we should wait until the roblox window is shown

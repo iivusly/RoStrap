@@ -93,8 +93,8 @@ struct RoStrapApp: App {
 						process.executableURL = binaryPath
 						process.arguments = delegate.openArguments
 						// TODO: Roblox does not like it when we pipe the output, so test for crashes
-						process.standardError = output
-						process.standardOutput = output
+						// process.standardError = output
+						// process.standardOutput = output
 						
 						try process.run()
 

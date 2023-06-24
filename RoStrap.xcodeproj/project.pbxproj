@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		660648022A46DCBC0066B02A /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660648012A46DCBC0066B02A /* PopUpView.swift */; };
 		66796FC42A35877A00A68DA0 /* RobloxURLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66796FC32A35877A00A68DA0 /* RobloxURLHandler.swift */; };
 		6697D8402A0BB4FD00399F0C /* RoStrapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6697D83F2A0BB4FD00399F0C /* RoStrapApp.swift */; };
 		6697D8422A0BB4FD00399F0C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6697D8412A0BB4FD00399F0C /* MainView.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		660648012A46DCBC0066B02A /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		66796FC32A35877A00A68DA0 /* RobloxURLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobloxURLHandler.swift; sourceTree = "<group>"; };
 		66906F122A3AF77F001DAC7E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6697D83C2A0BB4FD00399F0C /* RoStrap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoStrap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +125,7 @@
 				6697D86B2A0C271600399F0C /* RobloxUpdater.swift */,
 				6697D8452A0BB4FD00399F0C /* Preview Content */,
 				66796FC32A35877A00A68DA0 /* RobloxURLHandler.swift */,
+				660648012A46DCBC0066B02A /* PopUpView.swift */,
 			);
 			path = RoStrap;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				660648022A46DCBC0066B02A /* PopUpView.swift in Sources */,
 				66796FC42A35877A00A68DA0 /* RobloxURLHandler.swift in Sources */,
 				6697D86C2A0C271600399F0C /* RobloxUpdater.swift in Sources */,
 				6697D8422A0BB4FD00399F0C /* MainView.swift in Sources */,

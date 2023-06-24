@@ -61,7 +61,7 @@ struct RoStrapApp: App {
     }
 
     var body: some Scene {
-        Window("Bootstrapper", id: "RobloxBootstrapper") {
+        WindowGroup {
             MainView(stateMessage: $stateMessage, stateValue: $stateValue)
                 .frame(alignment: .center)
                 .task {
@@ -104,7 +104,9 @@ struct RoStrapApp: App {
                             // But it seems to not be triggered now...
                         }
 
-                        NSApplication.shared.terminate(nil)
+						// TODO: Move to window.close, but allow new windows
+						// window.close()
+						NSApplication.shared.terminate(nil)
                     }
 
                     let result = await task.result
@@ -119,5 +121,10 @@ struct RoStrapApp: App {
         .windowStyle(.hiddenTitleBar)
         .windowResizability(.contentSize)
         .commandsRemoved()
+		
+		
+			MenuBarExtra("RoStrap Menu", systemImage: "gamecontroller") {
+				PopUpView()
+			}.menuBarExtraStyle(.window)
     }
 }

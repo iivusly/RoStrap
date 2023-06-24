@@ -88,15 +88,15 @@ struct RoStrapApp: App {
 
                         print(delegate.openArguments.joined(separator: " "))
                         let process = Process()
-						let output = Pipe()
-						
-						process.executableURL = binaryPath
-						process.arguments = delegate.openArguments
-						// TODO: Roblox does not like it when we pipe the output, so test for crashes
-						// process.standardError = output
-						// process.standardOutput = output
-						
-						try process.run()
+                        let output = Pipe()
+
+                        process.executableURL = binaryPath
+                        process.arguments = delegate.openArguments
+                        // TODO: Roblox does not like it when we pipe the output, so test for crashes
+                        // process.standardError = output
+                        // process.standardOutput = output
+
+                        try process.run()
 
                         if process.isRunning {
                             // TODO: we should wait until the roblox window is shown
@@ -104,9 +104,9 @@ struct RoStrapApp: App {
                             // But it seems to not be triggered now...
                         }
 
-						// TODO: Move to window.close, but allow new windows
-						// window.close()
-						NSApplication.shared.terminate(nil)
+                        // TODO: Move to window.close, but allow new windows
+                        // window.close()
+                        NSApplication.shared.terminate(nil)
                     }
 
                     let result = await task.result
@@ -114,17 +114,16 @@ struct RoStrapApp: App {
                     case .success(()): break
                     case let .failure(error):
                         NSAlert(error: error).runModal()
-						NSApplication.shared.terminate(nil)
+                        NSApplication.shared.terminate(nil)
                     }
                 }
         }
         .windowStyle(.hiddenTitleBar)
         .windowResizability(.contentSize)
         .commandsRemoved()
-		
-		
-			MenuBarExtra("RoStrap Menu", systemImage: "gamecontroller") {
-				PopUpView()
-			}.menuBarExtraStyle(.window)
+
+        MenuBarExtra("RoStrap Menu", systemImage: "gamecontroller") {
+            PopUpView()
+        }.menuBarExtraStyle(.window)
     }
 }

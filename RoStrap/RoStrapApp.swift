@@ -61,11 +61,11 @@ struct RoStrapApp: App {
     }
 
     var body: some Scene {
-        WindowGroup {
+        Window("Bootstrapper", id: "RobloxBootstrapper") {
             MainView(stateMessage: $stateMessage, stateValue: $stateValue)
                 .frame(alignment: .center)
                 .task {
-                    let window: NSWindow = NSApplication.shared.windows.first!
+                    let window: NSWindow = NSApplication.shared.windows.last!
                     window.standardWindowButton(.zoomButton)?.isHidden = true
                     window.isMovableByWindowBackground = true
                     window.backgroundColor = .clear
@@ -104,8 +104,6 @@ struct RoStrapApp: App {
                             // But it seems to not be triggered now...
                         }
 
-                        // TODO: Move to window.close, but allow new windows
-                        // window.close()
                         NSApplication.shared.terminate(nil)
                     }
 

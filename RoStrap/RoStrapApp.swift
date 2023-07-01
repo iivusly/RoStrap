@@ -78,6 +78,7 @@ struct RoStrapApp: App {
                     
                     window.standardWindowButton(.zoomButton)?.isHidden = true
                     window.isMovableByWindowBackground = true
+                    window.isOpaque = false
                     window.backgroundColor = .clear
                     window.level = .floating
                     window.center()

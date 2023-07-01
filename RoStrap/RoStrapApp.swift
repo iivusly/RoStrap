@@ -23,6 +23,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
+enum WindowError: Error {
+    case cannotCreateWindow
+}
+
 @main
 struct RoStrapApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
@@ -65,7 +69,13 @@ struct RoStrapApp: App {
             MainView(stateMessage: $stateMessage, stateValue: $stateValue)
                 .frame(alignment: .center)
                 .task {
-                    let window: NSWindow = NSApplication.shared.windows.last!
+                    guard let window: NSWindow = NSApplication.shared.windows.first(where: { window in
+                        window.title == "Bootstrapper"
+                    }) else {
+                        NSAlert(error: WindowError.cannotCreateWindow).runModal()
+                        return NSApplication.shared.terminate(nil)
+                    }
+                    
                     window.standardWindowButton(.zoomButton)?.isHidden = true
                     window.isMovableByWindowBackground = true
                     window.backgroundColor = .clear

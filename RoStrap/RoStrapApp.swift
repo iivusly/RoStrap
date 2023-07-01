@@ -69,6 +69,7 @@ struct RoStrapApp: App {
             MainView(stateMessage: $stateMessage, stateValue: $stateValue)
                 .frame(alignment: .center)
                 .task {
+                    // Select the first window, else error
                     guard let window: NSWindow = NSApplication.shared.windows.first(where: { window in
                         window.title == "Bootstrapper"
                     }) else {
@@ -76,13 +77,16 @@ struct RoStrapApp: App {
                         return NSApplication.shared.terminate(nil)
                     }
                     
-                    window.standardWindowButton(.zoomButton)?.isHidden = true
+                    // Configure the window
                     window.isMovableByWindowBackground = true
-                    window.isOpaque = false
-                    window.backgroundColor = .clear
                     window.level = .floating
                     window.center()
                     window.makeKey()
+                    
+                    // Style the window
+                    window.standardWindowButton(.zoomButton)?.isHidden = true
+                    window.backgroundColor = .clear
+                    window.isOpaque = false
 
                     NSApplication.shared.activate(ignoringOtherApps: true)
 

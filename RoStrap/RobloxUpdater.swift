@@ -150,9 +150,9 @@ class RobloxUpdater {
         return try JSONDecoder().decode(clientVersionResponse.self, from: data.data(using: .ascii)!)
     }
 
-    func getRobloxBinary(channel _: userChannelResponse, version: clientVersionResponse, completionHandler: @escaping (Result<URL, Error>) -> Void) -> URLSessionDownloadTask {
+    func getRobloxBinary(channel: Any?, version: String, completionHandler: @escaping (Result<URL, Error>) -> Void) -> URLSessionDownloadTask {
         let url = URL(
-            string: "mac/\(version.clientVersionUpload)-RobloxPlayer.zip",
+            string: "mac/\(version)-RobloxPlayer.zip",
             relativeTo: setupServer
         )!
 
@@ -171,7 +171,7 @@ class RobloxUpdater {
         return process.terminationStatus
     }
 
-    func processRobloxBinary(path: URL, version: clientVersionResponse) throws -> URL {
+    func processRobloxBinary(path: URL, version: String) throws -> URL {
         let applicationSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appendingPathComponent(Bundle.main.bundleIdentifier!, conformingTo: .directory)
         try FileManager.default.createDirectory(at: applicationSupport, withIntermediateDirectories: true)
 
@@ -180,7 +180,7 @@ class RobloxUpdater {
         }
 
         let oldName = applicationSupport.appendingPathComponent("RobloxPlayer.app", conformingTo: .directory)
-        let newName = applicationSupport.appendingPathComponent("\(version.clientVersionUpload).app", conformingTo: .directory)
+        let newName = applicationSupport.appendingPathComponent("\(version).app", conformingTo: .directory)
 
         try FileManager.default.moveItem(at: oldName, to: newName)
 

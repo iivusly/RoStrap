@@ -40,27 +40,59 @@ struct RoStrapApp: App {
 
     func checkForUpdate() async throws {
         let updater = try await RobloxUpdater()
-        let currentVersion = UserDefaults.standard.string(forKey: "RobloxVersion")
-        let channel = try await updater.getPlayerChannel()
-        let version = try await updater.getVersionData(channel: channel)
-        NSLog("\(String(describing: currentVersion)) ==? \(version.clientVersionUpload)")
-        if currentVersion != version.clientVersionUpload {
-            let downloadedURL = try await withCheckedThrowingContinuation { continuation in
-                let downloadTask = updater.getRobloxBinary(channel: channel, version: version) { result in
-                    continuation.resume(with: result)
+        
+        // Check for the overridden version
+        let overrideVersion = UserDefaults.standard.string(forKey: "RobloxOverrideVersion")
+        if (overrideVersion != nil) {
+            // Check if the version is already downloaded
+            let applicationSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appendingPathComponent(Bundle.main.bundleIdentifier!, conformingTo: .directory)
+            let appPath = applicationSupport.appending(path: overrideVersion!)
+            if (FileManager.default.fileExists(atPath: appPath.path)) {
+                // Set values and exit
+                UserDefaults.standard.setValue(overrideVersion!, forKey: "RobloxVersion")
+                UserDefaults.standard.setValue(appPath.path(percentEncoded: false), forKey: "RobloxAppPath")
+            } else {
+                // Download Roblox Version
+                let downloadedURL = try await withCheckedThrowingContinuation { continuation in
+                    let downloadTask = updater.getRobloxBinary(channel: "live", version: overrideVersion!) { result in
+                        continuation.resume(with: result)
+                    }
+
+                    stateMessage = "Downloading Roblox Version \(overrideVersion!)"
+                    observations.append(downloadTask.progress.observe(\.fractionCompleted, options: [.new], changeHandler: { _, changed in
+                        // TODO: Fix mutations from sendable closures for Swift 6
+                        stateValue = changed.newValue
+                    }))
                 }
 
-                stateMessage = "Downloading Roblox Version \(version.version)"
-                observations.append(downloadTask.progress.observe(\.fractionCompleted, options: [.new], changeHandler: { _, changed in
-                    // TODO: Fix mutations from sendable closures for Swift 6
-                    stateValue = changed.newValue
-                }))
+                let appPath = try updater.processRobloxBinary(path: downloadedURL, version: overrideVersion!)
+                stateValue = nil
+                UserDefaults.standard.setValue(overrideVersion!, forKey: "RobloxVersion")
+                UserDefaults.standard.setValue(appPath.path(percentEncoded: false), forKey: "RobloxAppPath")
             }
+        } else {
+            let currentVersion = UserDefaults.standard.string(forKey: "RobloxVersion")
+            let channel = try await updater.getPlayerChannel()
+            let version = try await updater.getVersionData(channel: channel)
+            NSLog("\(String(describing: currentVersion)) ==? \(version.clientVersionUpload)")
+            if currentVersion != version.clientVersionUpload {
+                let downloadedURL = try await withCheckedThrowingContinuation { continuation in
+                    let downloadTask = updater.getRobloxBinary(channel: channel, version: version.clientVersionUpload) { result in
+                        continuation.resume(with: result)
+                    }
 
-            let appPath = try updater.processRobloxBinary(path: downloadedURL, version: version)
-            stateValue = nil
-            UserDefaults.standard.setValue(version.clientVersionUpload, forKey: "RobloxVersion")
-            UserDefaults.standard.setValue(appPath.path(percentEncoded: false), forKey: "RobloxAppPath")
+                    stateMessage = "Downloading Roblox Version \(version.version)"
+                    observations.append(downloadTask.progress.observe(\.fractionCompleted, options: [.new], changeHandler: { _, changed in
+                        // TODO: Fix mutations from sendable closures for Swift 6
+                        stateValue = changed.newValue
+                    }))
+                }
+
+                let appPath = try updater.processRobloxBinary(path: downloadedURL, version: version.clientVersionUpload)
+                stateValue = nil
+                UserDefaults.standard.setValue(version.clientVersionUpload, forKey: "RobloxVersion")
+                UserDefaults.standard.setValue(appPath.path(percentEncoded: false), forKey: "RobloxAppPath")
+            }
         }
     }
 

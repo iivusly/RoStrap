@@ -93,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		666F68DB2A5376A600AEC9F7 /* Roblox */ = {
+			isa = PBXGroup;
+			children = (
+				6697D86B2A0C271600399F0C /* RobloxUpdater.swift */,
+				66796FC32A35877A00A68DA0 /* RobloxURLHandler.swift */,
+			);
+			path = Roblox;
+			sourceTree = "<group>";
+		};
 		6697D8332A0BB4FD00399F0C = {
 			isa = PBXGroup;
 			children = (
@@ -117,14 +126,13 @@
 		6697D83E2A0BB4FD00399F0C /* RoStrap */ = {
 			isa = PBXGroup;
 			children = (
+				666F68DB2A5376A600AEC9F7 /* Roblox */,
 				6697D86A2A0BD08600399F0C /* Info.plist */,
 				6697D83F2A0BB4FD00399F0C /* RoStrapApp.swift */,
 				6697D8412A0BB4FD00399F0C /* MainView.swift */,
 				6697D8432A0BB4FD00399F0C /* Assets.xcassets */,
 				6697D8482A0BB4FD00399F0C /* RoStrap.entitlements */,
-				6697D86B2A0C271600399F0C /* RobloxUpdater.swift */,
 				6697D8452A0BB4FD00399F0C /* Preview Content */,
-				66796FC32A35877A00A68DA0 /* RobloxURLHandler.swift */,
 				660648012A46DCBC0066B02A /* PopUpView.swift */,
 			);
 			path = RoStrap;

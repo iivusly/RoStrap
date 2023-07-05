@@ -151,7 +151,7 @@ struct RoStrapApp: App {
                             // But it seems to not be triggered now...
                         }
 
-                        NSApplication.shared.terminate(nil)
+                        NSApplication.shared.terminate(self)
                     }
 
                     let result = await task.result
@@ -159,7 +159,7 @@ struct RoStrapApp: App {
                     case .success(()): break
                     case let .failure(error):
                         NSAlert(error: error).runModal()
-                        NSApplication.shared.terminate(nil)
+                        NSApplication.shared.terminate(self)
                     }
                 }
         }

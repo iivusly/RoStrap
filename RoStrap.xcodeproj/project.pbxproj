@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		660648022A46DCBC0066B02A /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660648012A46DCBC0066B02A /* PopUpView.swift */; };
 		666A5F5B2A55351300BD1CF7 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 666A5F5A2A55351300BD1CF7 /* Sparkle */; };
+		666A5F5E2A56162C00BD1CF7 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 666A5F5D2A56162C00BD1CF7 /* ZIPFoundation */; };
 		66796FC42A35877A00A68DA0 /* RobloxURLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66796FC32A35877A00A68DA0 /* RobloxURLHandler.swift */; };
 		6697D8402A0BB4FD00399F0C /* RoStrapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6697D83F2A0BB4FD00399F0C /* RoStrapApp.swift */; };
 		6697D8422A0BB4FD00399F0C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6697D8412A0BB4FD00399F0C /* MainView.swift */; };
@@ -75,6 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				666A5F5B2A55351300BD1CF7 /* Sparkle in Frameworks */,
+				666A5F5E2A56162C00BD1CF7 /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +186,7 @@
 			name = RoStrap;
 			packageProductDependencies = (
 				666A5F5A2A55351300BD1CF7 /* Sparkle */,
+				666A5F5D2A56162C00BD1CF7 /* ZIPFoundation */,
 			);
 			productName = RoStrap;
 			productReference = 6697D83C2A0BB4FD00399F0C /* RoStrap.app */;
@@ -259,6 +262,7 @@
 			mainGroup = 6697D8332A0BB4FD00399F0C;
 			packageReferences = (
 				666A5F592A55351300BD1CF7 /* XCRemoteSwiftPackageReference "Sparkle" */,
+				666A5F5C2A56162C00BD1CF7 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 			);
 			productRefGroup = 6697D83D2A0BB4FD00399F0C /* Products */;
 			projectDirPath = "";
@@ -634,6 +638,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		666A5F5C2A56162C00BD1CF7 /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.16;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -641,6 +653,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 666A5F592A55351300BD1CF7 /* XCRemoteSwiftPackageReference "Sparkle" */;
 			productName = Sparkle;
+		};
+		666A5F5D2A56162C00BD1CF7 /* ZIPFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 666A5F5C2A56162C00BD1CF7 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			productName = ZIPFoundation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

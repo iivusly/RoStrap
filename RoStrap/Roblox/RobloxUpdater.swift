@@ -7,6 +7,7 @@
 
 import AppKit
 import Foundation
+import ZIPFoundation
 
 class RobloxUpdater {
     struct clientVersionResponse: Decodable {
@@ -167,16 +168,6 @@ class RobloxUpdater {
         }
     }
 
-    private func unzipDirectory(path: URL, destination: URL) throws -> Int32 {
-        // TODO: Find a more efficient method of unzipping
-        let process = Process()
-        process.arguments = ["-qo", path.path, "-d", destination.path(percentEncoded: false)]
-        process.executableURL = URL(fileURLWithPath: "/usr/bin/unzip")
-        try process.run()
-        process.waitUntilExit()
-        return process.terminationStatus
-    }
-
     func processRobloxBinary(path: URL, version: String) throws -> URL {
         try fileManager.createDirectory(at: robloxBinaryDirectory, withIntermediateDirectories: true)
         
@@ -188,9 +179,7 @@ class RobloxUpdater {
         
         let temporaryDirectory = try fileManager.url(for: .itemReplacementDirectory, in: .userDomainMask, appropriateFor: targetFile, create: true)
 
-        if (try unzipDirectory(path: path, destination: temporaryDirectory) != 0) {
-            throw updateErrors.unzipFail
-        }
+        try fileManager.unzipItem(at: path, to: temporaryDirectory)
 
         try fileManager.moveItem(at: temporaryDirectory.appending(path: "RobloxPlayer.app"), to: targetFile)
 

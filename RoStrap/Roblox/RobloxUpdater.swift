@@ -36,11 +36,11 @@ class RobloxUpdater {
     static let clientSetupApi: URL = .init(string: "https://clientsettingscdn.roblox.com/")!
 
     // TODO: Figure out how to download from a channel
-    static let channels: [String] = [
+    /* static let channels: [String] = [
         "LIVE",
         "ZCanary",
         "zIntegration",
-    ]
+    ] */
 
     static let binaryType: String = "MacPlayer"
 
@@ -67,14 +67,15 @@ class RobloxUpdater {
         }
     }
 
-    let robloxUpdateURLSession = URLSession.shared
+    let urlSession = URLSession.shared
+    let fileManager = FileManager.default
 
     // MARK: - Functions
 
     func stringWithContentsOfURL(_ url: URL, completionHandler: @escaping (Result<String, Error>) -> Void) -> URLSessionDataTask {
         let urlRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10.0)
 
-        let task = robloxUpdateURLSession.dataTask(with: urlRequest) { data, _, error in
+        let task = urlSession.dataTask(with: urlRequest) { data, _, error in
             if data != nil {
                 let stringContent = String(data: data!, encoding: .ascii)
                 completionHandler(.success(stringContent ?? ""))
@@ -99,7 +100,7 @@ class RobloxUpdater {
     func fileWithContentsOfURL(url: URL, completionHandler: @escaping (Result<URL, Error>) -> Void) -> URLSessionDownloadTask {
         let urlRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 10.0)
 
-        let task = robloxUpdateURLSession.downloadTask(with: urlRequest) { fileURL, response, error in
+        let task = urlSession.downloadTask(with: urlRequest) { fileURL, response, error in
             if fileURL != nil {
                 if let data = try? Data(contentsOf: fileURL!) {
                     URLCache.shared.storeCachedResponse(CachedURLResponse(response: response!, data: data), for: urlRequest)
@@ -107,7 +108,7 @@ class RobloxUpdater {
 
                 let renameURL = fileURL!.deletingPathExtension().appendingPathExtension(url.pathExtension)
                 _ = Task {
-                    try FileManager.default.moveItem(at: fileURL!, to: renameURL)
+                    try self.fileManager.moveItem(at: fileURL!, to: renameURL)
                 }
 
                 completionHandler(.success(renameURL))
@@ -139,7 +140,7 @@ class RobloxUpdater {
         return try JSONDecoder().decode(userChannelResponse.self, from: data.data(using: .ascii)!)
     }
 
-    func getVersionData(channel: userChannelResponse = userChannelResponse(channelName: channels[1])) async throws -> clientVersionResponse {
+    func getVersionData(channel: userChannelResponse = userChannelResponse(channelName: "live")) async throws -> clientVersionResponse {
         let url = URL(
             string: "v2/client-version/\(RobloxUpdater.binaryType)/channel/\(channel.channelName.lowercased())",
             relativeTo: RobloxUpdater.clientSetupApi
@@ -172,8 +173,8 @@ class RobloxUpdater {
     }
 
     func processRobloxBinary(path: URL, version: String) throws -> URL {
-        let applicationSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appendingPathComponent(Bundle.main.bundleIdentifier!, conformingTo: .directory)
-        try FileManager.default.createDirectory(at: applicationSupport, withIntermediateDirectories: true)
+        let applicationSupport = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appendingPathComponent(Bundle.main.bundleIdentifier!, conformingTo: .directory)
+        try fileManager.createDirectory(at: applicationSupport, withIntermediateDirectories: true)
 
         if try (unzipDirectory(path: path, destination: applicationSupport) != 0) {
             throw updateErrors.unzipFail
@@ -182,11 +183,11 @@ class RobloxUpdater {
         let oldName = applicationSupport.appendingPathComponent("RobloxPlayer.app", conformingTo: .directory)
         let newName = applicationSupport.appendingPathComponent("\(version).app", conformingTo: .directory)
 
-        try FileManager.default.moveItem(at: oldName, to: newName)
+        try fileManager.moveItem(at: oldName, to: newName)
 
         let app = Bundle(url: newName)!
 
-        try FileManager.default.removeItem(at: (app.executableURL?.deletingLastPathComponent().appendingPathComponent("Roblox.app", conformingTo: .directory))!)
+        try fileManager.removeItem(at: (app.executableURL?.deletingLastPathComponent().appendingPathComponent("Roblox.app", conformingTo: .directory))!)
 
         NSWorkspace.shared.setIcon(Bundle.main.image(forResource: "AppIcon"), forFile: app.bundlePath, options: .excludeQuickDrawElementsIconCreationOption)
 

@@ -131,13 +131,13 @@
 			isa = PBXGroup;
 			children = (
 				666F68DB2A5376A600AEC9F7 /* Roblox */,
-				6697D86A2A0BD08600399F0C /* Info.plist */,
 				6697D83F2A0BB4FD00399F0C /* RoStrapApp.swift */,
 				6697D8412A0BB4FD00399F0C /* MainView.swift */,
+				660648012A46DCBC0066B02A /* PopUpView.swift */,
 				6697D8432A0BB4FD00399F0C /* Assets.xcassets */,
 				6697D8482A0BB4FD00399F0C /* RoStrap.entitlements */,
+				6697D86A2A0BD08600399F0C /* Info.plist */,
 				6697D8452A0BB4FD00399F0C /* Preview Content */,
-				660648012A46DCBC0066B02A /* PopUpView.swift */,
 			);
 			path = RoStrap;
 			sourceTree = "<group>";

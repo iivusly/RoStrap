@@ -135,7 +135,7 @@ struct RoStrapApp: App {
 
                         print(delegate.openArguments.joined(separator: " "))
                         let process = Process()
-                        let output = Pipe()
+                        // let output = Pipe()
 
                         process.executableURL = binaryPath
                         process.arguments = delegate.openArguments

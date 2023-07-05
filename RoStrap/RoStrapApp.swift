@@ -39,7 +39,7 @@ struct RoStrapApp: App {
     @State var observations: [NSKeyValueObservation] = []
 
     func checkForUpdate() async throws {
-        let updater = try await RobloxUpdater()
+        let updater = RobloxUpdater()
         
         // Check for the overridden version
         let overrideVersion = UserDefaults.standard.string(forKey: "RobloxOverrideVersion")

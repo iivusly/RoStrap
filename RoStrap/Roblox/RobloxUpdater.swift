@@ -44,31 +44,36 @@ class RobloxUpdater {
 
     static let binaryType: String = "MacPlayer"
 
-    var setupServer: URL!
-
-    init() async throws {
-        var server: URL?
-
+    var setupServer: URL {
         for url in RobloxUpdater.setupServers {
             do {
-                _ = try await stringWithContentsOfURL(url)
+                let semaphore = DispatchSemaphore(value: 0)
+                var requestResult = Result {""}
+                _ = stringWithContentsOfURL(url) { result in
+                    requestResult = result
+                    semaphore.signal()
+                }
+                semaphore.wait()
+                
+                _ = try requestResult.get()
+                
                 NSLog("setupServer = \(url.absoluteString)")
-                server = url
-                break
+                return url
             } catch {
                 continue
             }
         }
-
-        if server == nil {
-            throw updateErrors.cannotConnect
-        } else {
-            setupServer = server!
-        }
+        
+        fatalError("Roblox servers are down?")
     }
 
     let urlSession = URLSession.shared
     let fileManager = FileManager.default
+    
+    // TODO: Find out a better place to put Roblox binaries
+    var robloxBinaryDirectory: URL {
+        fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appendingPathComponent(Bundle.main.bundleIdentifier!, conformingTo: .directory)
+    }
 
     // MARK: - Functions
 
@@ -173,19 +178,23 @@ class RobloxUpdater {
     }
 
     func processRobloxBinary(path: URL, version: String) throws -> URL {
-        let applicationSupport = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appendingPathComponent(Bundle.main.bundleIdentifier!, conformingTo: .directory)
-        try fileManager.createDirectory(at: applicationSupport, withIntermediateDirectories: true)
+        try fileManager.createDirectory(at: robloxBinaryDirectory, withIntermediateDirectories: true)
+        
+        let targetFile = robloxBinaryDirectory.appendingPathComponent("\(version).app", conformingTo: .directory)
+        
+        if ((try? targetFile.checkResourceIsReachable()) ?? false) {
+            return targetFile
+        }
+        
+        let temporaryDirectory = try fileManager.url(for: .itemReplacementDirectory, in: .userDomainMask, appropriateFor: targetFile, create: true)
 
-        if try (unzipDirectory(path: path, destination: applicationSupport) != 0) {
+        if (try unzipDirectory(path: path, destination: temporaryDirectory) != 0) {
             throw updateErrors.unzipFail
         }
 
-        let oldName = applicationSupport.appendingPathComponent("RobloxPlayer.app", conformingTo: .directory)
-        let newName = applicationSupport.appendingPathComponent("\(version).app", conformingTo: .directory)
+        try fileManager.moveItem(at: temporaryDirectory.appending(path: "RobloxPlayer.app"), to: targetFile)
 
-        try fileManager.moveItem(at: oldName, to: newName)
-
-        let app = Bundle(url: newName)!
+        let app = Bundle(url: targetFile)!
 
         try fileManager.removeItem(at: (app.executableURL?.deletingLastPathComponent().appendingPathComponent("Roblox.app", conformingTo: .directory))!)
 

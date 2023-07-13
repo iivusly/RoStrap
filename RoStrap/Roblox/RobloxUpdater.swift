@@ -36,7 +36,9 @@ class RobloxUpdater {
 
     static let clientSetupApi: URL = .init(string: "https://clientsettingscdn.roblox.com/")!
 
-    // TODO: Figure out how to download from a channel
+    // TODO: Implement Channels correctly
+    // https://devforum.roblox.com/t/how-to-get-the-native-version-of-roblox-roblox-studio-for-apple-silicon/2459091/4
+    // Apple Silicon intergration needed!!!
     /* static let channels: [String] = [
         "LIVE",
         "ZCanary",

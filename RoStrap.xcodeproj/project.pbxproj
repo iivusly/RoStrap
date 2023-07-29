@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		660648022A46DCBC0066B02A /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660648012A46DCBC0066B02A /* PopUpView.swift */; };
+		664501962A60974C008CEB41 /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 664501952A60974C008CEB41 /* Sentry */; };
+		664501982A60974C008CEB41 /* SentrySwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 664501972A60974C008CEB41 /* SentrySwiftUI */; };
 		666A5F5B2A55351300BD1CF7 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 666A5F5A2A55351300BD1CF7 /* Sparkle */; };
 		666A5F5E2A56162C00BD1CF7 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 666A5F5D2A56162C00BD1CF7 /* ZIPFoundation */; };
 		66796FC42A35877A00A68DA0 /* RobloxURLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66796FC32A35877A00A68DA0 /* RobloxURLHandler.swift */; };
@@ -76,7 +78,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				666A5F5B2A55351300BD1CF7 /* Sparkle in Frameworks */,
+				664501982A60974C008CEB41 /* SentrySwiftUI in Frameworks */,
 				666A5F5E2A56162C00BD1CF7 /* ZIPFoundation in Frameworks */,
+				664501962A60974C008CEB41 /* Sentry in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +191,8 @@
 			packageProductDependencies = (
 				666A5F5A2A55351300BD1CF7 /* Sparkle */,
 				666A5F5D2A56162C00BD1CF7 /* ZIPFoundation */,
+				664501952A60974C008CEB41 /* Sentry */,
+				664501972A60974C008CEB41 /* SentrySwiftUI */,
 			);
 			productName = RoStrap;
 			productReference = 6697D83C2A0BB4FD00399F0C /* RoStrap.app */;
@@ -263,6 +269,7 @@
 			packageReferences = (
 				666A5F592A55351300BD1CF7 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				666A5F5C2A56162C00BD1CF7 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
+				664501942A60974C008CEB41 /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
 			);
 			productRefGroup = 6697D83D2A0BB4FD00399F0C /* Products */;
 			projectDirPath = "";
@@ -630,6 +637,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		664501942A60974C008CEB41 /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/getsentry/sentry-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 		666A5F592A55351300BD1CF7 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sparkle-project/Sparkle";
@@ -649,6 +664,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		664501952A60974C008CEB41 /* Sentry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 664501942A60974C008CEB41 /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = Sentry;
+		};
+		664501972A60974C008CEB41 /* SentrySwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 664501942A60974C008CEB41 /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = SentrySwiftUI;
+		};
 		666A5F5A2A55351300BD1CF7 /* Sparkle */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 666A5F592A55351300BD1CF7 /* XCRemoteSwiftPackageReference "Sparkle" */;

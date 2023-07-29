@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Sentry
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
     var openArguments: [String] = []
@@ -37,6 +38,18 @@ struct RoStrapApp: App {
     @State var isErroring = false
 
     @State var observations: [NSKeyValueObservation] = []
+    init() {
+        #if !DEBUG
+        SentrySDK.start { options in
+            options.dsn = "https://1e675d6cfc2143e6a8a7d631d3796a15@o4505523991085056.ingest.sentry.io/4505523997048832"
+            options.debug = true // Enabled debug when first installing is always helpful
+
+            // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
+            // We recommend adjusting this value in production.
+            options.tracesSampleRate = 1.0
+        }
+        #endif
+    }
 
     func checkForUpdate() async throws {
         let updater = RobloxUpdater()

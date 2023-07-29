@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Sparkle
 import Sentry
 
 final class AppDelegate: NSObject, NSApplicationDelegate {

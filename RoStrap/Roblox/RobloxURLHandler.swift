@@ -56,7 +56,7 @@ class RobloxURLHandler {
             case "browsertrackerid":
                 arguments.append(contentsOf: ["-browserTrackerId", value])
             default:
-                let _: String? = nil
+                break
             }
         }
 

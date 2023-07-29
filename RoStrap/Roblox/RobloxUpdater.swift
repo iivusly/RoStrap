@@ -138,7 +138,7 @@ class RobloxUpdater {
         }
     }
 
-    func getPlayerChannel() async throws -> userChannelResponse {
+    func getDefaultChannel() async throws -> userChannelResponse {
         let url = URL(
             string: "v2/user-channel?binaryType=\(RobloxUpdater.binaryType)",
             relativeTo: RobloxUpdater.clientSetupApi
@@ -148,9 +148,9 @@ class RobloxUpdater {
         return try JSONDecoder().decode(userChannelResponse.self, from: data.data(using: .ascii)!)
     }
 
-    func getVersionData(channel: userChannelResponse = userChannelResponse(channelName: "live")) async throws -> clientVersionResponse {
+    func getVersionData(channel: String) async throws -> clientVersionResponse {
         let url = URL(
-            string: "v2/client-version/\(RobloxUpdater.binaryType)/channel/\(channel.channelName.lowercased())",
+            string: "v2/client-version/\(RobloxUpdater.binaryType)/channel/\(channel.lowercased())",
             relativeTo: RobloxUpdater.clientSetupApi
         )!
 
@@ -159,7 +159,8 @@ class RobloxUpdater {
         return try JSONDecoder().decode(clientVersionResponse.self, from: data.data(using: .ascii)!)
     }
 
-    func getRobloxBinary(channel: Any?, version: String, completionHandler: @escaping (Result<URL, Error>) -> Void) -> URLSessionDownloadTask {
+    func getRobloxBinary(channel: String, version: String, completionHandler: @escaping (Result<URL, Error>) -> Void) -> URLSessionDownloadTask {
+        // TODO: find the channel endpoint
         let url = URL(
             string: "mac/\(version)-RobloxPlayer.zip",
             relativeTo: setupServer

@@ -92,12 +92,12 @@ struct RoStrapApp: App {
             }
         } else {
             let currentVersion = UserDefaults.standard.string(forKey: "RobloxVersion")
-            let channel = try await updater.getPlayerChannel()
-            let version = try await updater.getVersionData(channel: channel)
+            let channel = try await updater.getDefaultChannel()
+            let version = try await updater.getVersionData(channel: channel.channelName)
             NSLog("\(String(describing: currentVersion)) ==? \(version.clientVersionUpload)")
             if currentVersion != version.clientVersionUpload {
                 let downloadedURL = try await withCheckedThrowingContinuation { continuation in
-                    let downloadTask = updater.getRobloxBinary(channel: channel, version: version.clientVersionUpload) { result in
+                    let downloadTask = updater.getRobloxBinary(channel: channel.channelName, version: version.clientVersionUpload) { result in
                         continuation.resume(with: result)
                     }
 

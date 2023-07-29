@@ -9,6 +9,7 @@ import SwiftUI
 import Sparkle
 import Sentry
 
+// TODO: Move away from AppDelegate
 final class AppDelegate: NSObject, NSApplicationDelegate {
     var openArguments: [String] = []
 

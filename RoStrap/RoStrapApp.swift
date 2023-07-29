@@ -38,6 +38,9 @@ struct RoStrapApp: App {
     @State var isErroring = false
 
     @State var observations: [NSKeyValueObservation] = []
+    
+    private let updaterController = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
+    
     init() {
         #if !DEBUG
         SentrySDK.start { options in
@@ -52,6 +55,10 @@ struct RoStrapApp: App {
     }
 
     func checkForUpdate() async throws {
+        updaterController.updater.automaticallyChecksForUpdates = true
+        updaterController.updater.automaticallyDownloadsUpdates = true
+        updaterController.checkForUpdates(self) // Check for updates
+        
         let updater = RobloxUpdater()
         
         // Check for the overridden version
